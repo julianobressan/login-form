@@ -1,0 +1,247 @@
+/* Set the colors variables */ 
+:root {
+    --primary-color: #2ecc71;
+    --error-color: #e74c3c;
+    --form-bg-color: #111;
+    --bg-color: #111;
+    --text-color: #f0f0f5;
+    --light-color: rgba(255, 255, 255, 0.04);
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--bg-color);
+    background: var(--primary-color);
+  }
+  
+::selection {
+    color: var(--bg-color);
+    background: var(--primary-color);
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-color);
+    color: #f0f0f5;
+}
+
+form {
+    background-color: var(--form-bg-color);
+    width: 100%;
+    max-width: 500px;
+    margin: 64px auto 32px auto;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+form h1 {
+    margin-bottom: 32px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+div.input {
+    margin-bottom: 32px;
+    position: relative;
+}
+
+/* Reset styles */
+input, button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 16px 0;
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+    background-color: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1em;    
+}
+
+/* Change colors of autocomplete function in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:valid {
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--form-bg-color) inset;
+}
+
+input {
+    padding: 16px 18px;
+}
+
+input:required {
+    box-shadow:none;
+}
+input:invalid {
+    box-shadow:0 0 1px var(--error-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    color: var(--bg-color);
+    transition: .4s;
+    border-color: var(--primary-color);
+}
+
+button:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+    
+    cursor: pointer;
+}
+
+/* Place labels on inputs top corner */
+input ~ label {
+    position: absolute;
+    color: var(--text-color);
+    top: -10px;
+    left: 25px;
+    color: var(--text-color);
+    padding: 0 6px;
+    background-color: var(--form-bg-color);
+}
+
+/* Place error messages on inputs bottom corner */
+.input span.error {
+    display: flex;    
+    position: absolute;
+    color: var(--text-color);
+    top: 44px;
+    left: 25px;
+    padding: 0 6px;
+    background-color: var(--form-bg-color);
+}
+
+.input span.error.active {
+    color: var(--error-color);
+}
+
+.footer {
+    text-align: center;
+    color: #ccc;
+}
+
+.footer > a {
+    color: #ccc;
+    transition: .4s;
+}
+
+.footer > a:hover {
+    color: var(--primary-color);
+}
+
+.remember > a {
+    color: var(--text-color);
+    transition: .4s;
+    text-decoration: none;
+}
+
+.remember > a:hover {
+    color: var(--primary-color);
+}
+
+.remember {
+    padding: 32px 0 0 0;
+    text-align: center;
+}
+
+.remember > a:hover {
+    color: var(--primary-color);
+
+}
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 32px;
+    padding-top: 3px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: var(--text-color)
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid var(--text-color);
+    border-radius: 12px;;
+    background-color: transparent;
+  }
+
+  .checkmark:hover {
+      border-color: var(--primary-color);
+  }
+  
+  /* On mouse-over, change to primary color on border */
+  .container:hover input ~ .checkmark {
+    border-color: var(--primary-color);
+  }
+  
+  /* When the checkbox is checked, add a primary color background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--text-color);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
