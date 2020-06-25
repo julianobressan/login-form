@@ -26,7 +26,8 @@ To configure the action of form, write the appropriate address of authentication
 
 ## Author
 
-* **Juliano Bressan** - *Initial work* - [GitHub](https://github.com/julianobressan) - [BRX Digital](http://brxdigital.com)
+* **Mayk Brito** - *Initial work* - [GitHub](https://github.com/maykbrito)
+* **Juliano Bressan** - *Enhancements* - [GitHub](https://github.com/julianobressan) - [BRX Digital](http://brxdigital.com)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
